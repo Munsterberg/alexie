@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nodemon src/app.js --exec babel-node --presets env",
-    "start": "node ./dist/app/app.js",
+    "start": "node ./dist/src/app.js",
     "build": "babel src/*.js -d dist"
   },
   "author": "Munsterberg",
