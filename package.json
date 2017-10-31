@@ -14,7 +14,10 @@
   "author": "Munsterberg",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^4.12.5",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

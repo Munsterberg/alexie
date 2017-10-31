@@ -45,3 +45,4 @@ config/default.json
 public/bundle.js
 *.env
 .vscode/
+keys.js
