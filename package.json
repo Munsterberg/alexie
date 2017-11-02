@@ -7,13 +7,16 @@
     "npm": "5.3.0"
   },
   "scripts": {
-    "dev": "nodemon src/app.js --exec babel-node --presets env",
+    "server": "nodemon src/app.js --exec babel-node --presets env",
     "start": "node ./dist/src/app.js",
-    "build": "babel src/*.js -d dist"
+    "build": "babel src/*.js -d dist",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Munsterberg",
   "license": "MIT",
   "dependencies": {
+    "concurrently": "^3.5.0",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "mongoose": "^4.12.5",
