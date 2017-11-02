@@ -46,3 +46,4 @@ public/bundle.js
 *.env
 .vscode/
 dev.js
+.DS_Store
