@@ -1,5 +1,6 @@
 import React from 'react';
 import { oneOfType, object, bool } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 Header.propTypes = {
@@ -22,9 +23,9 @@ function Header(props) {
     <header>
       <nav>
         <div className="nav-wrapper container">
-          <a href="/" className="brand-logo">Brand</a>
+          <Link to="/" className="brand-logo">Brand</Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
+            <li><Link to="/">Home</Link></li>
             { renderContent(props.auth) }
           </ul>
         </div>
