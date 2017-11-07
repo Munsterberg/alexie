@@ -2,6 +2,7 @@ import express from 'express';
 import passport from 'passport';
 
 import * as homeController from '../controllers/homeController';
+import * as apiController from '../controllers/apiController';
 
 const router = express.Router();
 
@@ -24,5 +25,8 @@ router.get('/api/logout', (req, res) => {
 router.get('/api/current_user', (req, res) => {
   res.send(req.user);
 });
+
+// riot api routes
+router.get('/api/test', apiController.getSummonerByName);
 
 export default router;
