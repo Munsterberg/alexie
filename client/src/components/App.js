@@ -5,8 +5,8 @@ import { func } from 'prop-types';
 import * as actions from '../actions';
 
 import Layout from './Layout';
+import Dashboard from './pages/Dashboard';
 
-const Dashboard = () => <div><h1>Dashboard</h1></div>;
 const NotFoundPage = () => <div>Page Not Found</div>;
 
 class App extends Component {
