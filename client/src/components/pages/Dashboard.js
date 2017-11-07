@@ -1,17 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { func } from 'prop-types';
+import { object, func } from 'prop-types';
 
 import { fetchSummoner } from '../../actions/index';
 import SearchForm from '../SearchForm';
 
 class Dashboard extends React.Component {
   static propTypes = {
-    fetchSummoner: func
+    fetchSummoner: func,
+    history: object
   }
 
   _fetchSummoner = (summonerName) => {
     this.props.fetchSummoner(summonerName);
+    this.props.history.push('/summoner');
   }
 
   render() {
