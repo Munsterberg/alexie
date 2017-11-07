@@ -11,7 +11,8 @@
     "start": "node ./dist/src/app.js",
     "build": "babel src/*.js -d dist",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run lint\"",
+    "lint": "eslint src/ client/ || true"
   },
   "author": "Munsterberg",
   "license": "MIT",
@@ -30,6 +31,9 @@
     "babel-eslint": "^8.0.1",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "nodemon": "^1.12.1"
   }
 }

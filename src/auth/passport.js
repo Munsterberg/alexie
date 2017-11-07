@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy({
   const existingUser = await User.findOne({ googleId: profile.id });
 
   if (!existingUser) {
-    const user = await new User({ googleId: profile.id }).save()
+    const user = await new User({ googleId: profile.id }).save();
     done(null, user);
   }
 
