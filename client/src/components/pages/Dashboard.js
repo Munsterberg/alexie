@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { func } from 'prop-types';
+
+import { fetchSummoner } from '../../actions/index';
 
 class Dashboard extends React.Component {
   state = {
     summonerName: ''
+  }
+
+  static propTypes = {
+    fetchSummoner: func
   }
 
   _onInputChange = (e) => {
@@ -13,13 +21,20 @@ class Dashboard extends React.Component {
     this.setState(() => stateObj);
   }
 
+  _onSubmit = (e) => {
+    e.preventDefault();
+
+    this.props.fetchSummoner(this.state.summonerName);
+    console.log('submitted');
+  }
+
   render() {
     const { summonerName } = this.state;
     return (
       <div className="container">
         <h1>Search for a Summoner</h1>
         <div className="row">
-          <form className="col s12">
+          <form className="col s12" onSubmit={this._onSubmit}>
             <input
               type="text"
               className="validate"
@@ -37,4 +52,10 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchSummoner: (summonerName) => dispatch(fetchSummoner(summonerName))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Dashboard);
