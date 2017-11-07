@@ -9,3 +9,11 @@ export const getSummonerByName = async(req, res) => {
   );
   res.send(summoner.data);
 };
+
+export const getRecentMatchesByAccountId = async(req, res) => {
+  const { accountId } = req.query;
+  const matches = await axios.get(
+    `https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/${accountId}/recent?api_key=${keys.riotAPIKey}`
+  );
+  res.send(matches.data);
+};
