@@ -8,6 +8,6 @@ export const fetchUser = () => async(dispatch) => {
 };
 
 export const fetchSummoner = (summonerName) => async(dispatch) => {
-  const res = await axios.get(`/api/test?summonerName=${summonerName}`);
+  const res = await axios.get(`/api/summoner-by-name?summonerName=${summonerName}`);
   dispatch({ type: FETCH_SUMMONER, payload: res.data });
 };

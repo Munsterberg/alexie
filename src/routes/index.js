@@ -27,6 +27,6 @@ router.get('/api/current_user', (req, res) => {
 });
 
 // riot api routes
-router.get('/api/test', apiController.getSummonerByName);
+router.get('/api/summoner-by-name', apiController.getSummonerByName);
 
 export default router;
