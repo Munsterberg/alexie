@@ -2,6 +2,7 @@ import express from 'express';
 import passport from 'passport';
 
 import * as homeController from '../controllers/homeController';
+import * as movieApiController from '../controllers/movieApiController';
 
 const router = express.Router();
 
@@ -24,5 +25,10 @@ router.get('/api/logout', (req, res) => {
 router.get('/api/current_user', (req, res) => {
   res.send(req.user);
 });
+
+router.get('/api/genre/movie/list', movieApiController.genreList);
+router.get('/api/movie/popular', movieApiController.popularMovies);
+router.get('/api/movie/top_rated', movieApiController.topRatedMovies);
+router.get('/api/movie/upcoming', movieApiController.upcomingMovies);
 
 export default router;
