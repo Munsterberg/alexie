@@ -6,7 +6,6 @@ import * as actions from '../actions';
 
 import Layout from './Layout';
 import Dashboard from './pages/Dashboard';
-import Summoner from './pages/Summoner';
 
 const NotFoundPage = () => <div>Page Not Found</div>;
 
@@ -25,7 +24,6 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route path='/' component={Dashboard} exact />
-            <Route path='/summoner' component={Summoner} exact />
             <Route component={NotFoundPage} />
           </Switch>
         </Layout>
